@@ -342,15 +342,14 @@ plt.tight_layout()
 #plt.savefig('ReynoldsNumber.png')
 plt.show()
 
-Using a relative file path:
-Using relative file path:
- ![ReynoldNumber](/Images/ReynoldNumber.jpg)
-
 #re_pipe returns Reynold number for a pipe; flow rate, diameter, nu(kinematic viscosity)
 #viscosity_kinematic returns kinematic viscosity of water at given temp
 ```
 
-```
+Using a relative file path:
+ ![ReynoldsNumber](/Images/ReynoldsNumber.png)
+
+
 # Teletype Basics
 In this section you and your team can practice using Teletype together.
 
