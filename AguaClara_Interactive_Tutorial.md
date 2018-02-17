@@ -18,7 +18,7 @@ You can find a GitHub tutorial [here](https://github.com/AguaClara/aguaclara_tut
 
 1. Below this, write a sentence or two about yourself:
 
-<!--- Fill you answer here. --->
+I am from New Hampshire.
 
 
 
@@ -44,7 +44,7 @@ To signify a header, use `#`. The more `#` you use, the smaller the header gets.
 
 1. Make a header of similar size as Header 3 with whatever text you want:
 
-<!--- Fill you answer here. --->
+### California Love
 
 ## Emphasis
 There are several different ways to emphasize text: *italics*, **bold**, ***combined***, and ~~strikethrough~~.
@@ -56,7 +56,10 @@ There are several different ways to emphasize text: *italics*, **bold**, ***comb
 
 1. Write 4 of your favorite words using each type of emphasis:
 
-<!--- Fill you answer here. --->
+*brady*
+**goat**
+***belichick***
+~~rings~~
 
 
 ## Lists
@@ -68,7 +71,12 @@ Lists are very easy to do. For a bulleted list, use the asterisk and for a numbe
 
 1. Now try it out for yourself. Write down a list of things you hope to achieve this semester, and elaborate on them with sub items:
 
-<!--- Fill you answer here. --->
+* Finish submersible sensor design
+  - Draw up design in Fusion 360
+  - Decide on materials
+* Get 8 hours of sleep
+  - Eat breakfast
+
 
 ## Images
 To input images, you'll either need an image URL or a file path to your image. For AguaClara work, your repository should have a folder for images where you can get an image URL or file path from. In this tutorial, I've made an image folder with a picture in the `aguaclara_tutorial` repository.
@@ -100,7 +108,13 @@ Image with Height and Width Adjusted:
 
 1. Make an images folder in your personal repository, and import an image of your hometown or pet from that folder. Do it unformatted using the image URL and the relative file path method, then do it again but instead change the height and width of your image:
 
-<!--- Fill you answer here. --->
+Using a URL: ![Nashua](https://github.com/vsrilekha/Personal/blob/master/Images/Nashua.jpg?raw=true)
+
+Using relative file path:
+ ![Nashua](/Images/Nashua.jpg)
+
+ Image with Height and Width Adjusted:
+ <img src="https://github.com/vsrilekha/Personal/blob/master/Images/Nashua.jpg?raw=true" height=200 width=100>
 
 
 
@@ -113,7 +127,8 @@ To insert a link, all you have to do is enclose your linked text in `[]` followe
 
 1. Below, write a sentence describing your major, and insert a link to your major's department website.
 
-<!--- Fill you answer here. --->
+I am a mechanical engineer. We design, analyze and construct mechanical systems.
+[Here](http://www.mae.cornell.edu/) is a link to the Cornell Mechanical Engineering website.
 
 ## Tables
 Tables in Markdown are slightly harder, but there's an automatic function that allows to you make one easily. When working in a `.md` file, all you have to do is type `table` and hit enter. It will initialize a 2 by 2 table, but you can easily increase the width by going to the last column and hitting `Tab` or it's height by clicking in any cell and hitting `Enter`. Notice in the example how the text below the header is justified left, center, and right. This is due to the line below the header. A line with a colon on the far left of the dashes only indicates left justified, colons on both sides of the dashes indicates centered, and a colon on the far right of the dashes indicates right justified.
@@ -143,7 +158,11 @@ When making tables, it's not important that the lines match up. For example, the
 
 1. Create a table listing your 3 favorite animals, foods, books, and places on campus. Try out the different cell justifications:
 
-<!--- Fill you answer here. --->
+| Animals | Foods | Books | Places on Campus |
+|:------- |:-----:|:-----| ----------------:|
+| Cheetah | Pasta      |     To Kill a Mockingbird  |      Olin Stacks            |
+|   Elephant      |   Naan    | 1984      |      Upson            |
+|     Koala    |   Quesadilla    | Fahrenheit 451      |        Thurston          |
 
 
 
@@ -162,13 +181,13 @@ For larger code blocks where you report multiple lines of code, you always start
 
 1. Below, write a Python print function with a different string using syntax highlighting:
 
-<!--- Fill you answer here. --->
+`print('a different string')`
 
 2. Now write a block of Python code for that same print statement:
 
-<!--- Fill you answer here. --->
-
-
+```python
+print('a different string')
+```
 
 ## LaTeX Equations
 You can also input LaTeX formatted equations in your Markdown file. To indicate where your equation is, you need to start and end your LaTeX equation with `$$`. To get the LaTeX preview to show it formatted, press `Cntrl + Shift + X`. For example, toggle the LaTeX preview for the line below:
@@ -177,7 +196,8 @@ $$ Re_D = \frac{uD}{\nu} $$
 
 1. Try it on your own! Write your favorite equation using LaTeX source code and toggle the LaTeX preview to see it formatted:
 
-<!--- Fill you answer here. --->
+$$a^2 + b^2 = c^2$$
+$$ i^2 = -1$$
 
 
 # Using Python and Running it With Hydrogen in Markdown
@@ -186,6 +206,8 @@ $$ Re_D = \frac{uD}{\nu} $$
 1. Below this, I've copied the code I wrote for the [Python Basics Tutorial](https://github.com/AguaClara/aguaclara_tutorial/wiki/Tutorial:-Python-Basics). You should familiarize yourself with the different Hydrogen commands using this code. For the first line, use `Hydrogen: Run` (`Cmnd + Enter`).
 2. For the second line, use `Hydrogen: Run and Move Down` (`Shift + Enter`).
 3. For the remaining code, highlight it with your cursor and use `Hydrogen: Run`. What is the difference between the three?
+
+`Hydrogen:Run` will only run the selected code and if no code is selected, it will find the next complete block that's on or before current line. `Hydrogen: Run and Move Down` will run the code as above, but also move the cursor to the next executable line.
 
 ```python
 from aide_design.play import*
@@ -198,6 +220,8 @@ def re_flat_plate(velocity, dist, nu):
   return (velocity * dist / nu)
 
 plt.plot(xArray, 5 * xArray / np.sqrt(re_flat_plate(1, xArray, pc.viscosity_kinematic(293 * u.kelvin))), '-', label = 'Blasius Solution')
+
+
 plt.xlabel('Distance From Leading Edge (Meters)')
 plt.ylabel('Boundary Layer Thickness (Meters)')
 plt.title('Blasius Solution for Water at 293 K')
@@ -213,40 +237,56 @@ These questions are meant to test what you've learned from the Python Basics tut
 
 1. Write a conditional statement with 3 conditions: when x is 10, when x is 1, and when x is anything other than 1 or 10. For each condition, have your code print what the value is or isn't.
 
-<!--- Fill you answer here. --->
-
+```python
+if x==10:
+  print('x is 10')
+elif x== 1:
+  print('x is 1')
+else:
+  print('x is neither 10 nor 1')
+```
 
 
 
 2. Write a `for` loop that takes a variable with an initial value of 0, and adds the current index to the previous value of that variable (i.e. you variable should grow in size every iteration). Perform the iteration 20 times, and have the final value be printed at the end.
 
-<!--- Fill you answer here. --->
-
-
-
-
-
-
-
+```python
+v = 0;
+for i in range (20):
+  v = i + v;
+print('Final value is ',v)
+```
 
 
 3. Using the NumPy package and `unit_registry`, calculate the value of sin(4) meters, and use the sigfig function from the unit unit_registry module in aide_design to get your answer to 2 sig-figs. *(Hint: You will need to import these packages. Remember how to do that?)*
 
-<!--- Fill you answer here. --->
-
+```python
+from aide_design.play import*
+val = np.sin(4)* u.m
+aide_design.units.set_sig_fig(2)
+print('After Sig Fig Adjustment: ',val)
+```
 
 
 4. Create a `list` of length 5, and verify the length of your list. Once you've done that, turn your `list` into an `array` and apply units of meters to it. After that, create a 5x5 `array`, extract the middle row and middle column. Verify the size of your 2D `array` and apply units of liters to it.
 
-<!--- Fill you answer here. --->
+```python
+from aide_design.play import*
+myList = [0,1,2,3,4]
+print('Length of my list: ', len(myList))
+myArray = np.array(myList)
+myArrayUnits = myArray * u.m
+myBigArray = np.random.rand(5,5)
+A = myBigArray[:,2]
+B = myBigArray[2,:]
+my2DArray = np.concatenate((A,B))
 
+size = np.size(my2DArray)
+my2DArrayUnits = my2DArray * u.L
 
+print('The size of my 2D array is: ', size)
 
-
-
-
-
-
+```
 
 5.  One of the most famous equations for a particle diffusing through a liquid at low Reynolds Number is the Stokes-Einstein Equation where k<sub>B</sub> is the Boltzmann constant, T is the temperature in Kelvin, eta is the dynamic viscosity in kg/(m*s), and r is the particle radius. Write a function that takes a temperature in Kelvin, a particle radius in meters, and a viscosity of water to calculate the diffusion coefficient D.
 
@@ -258,25 +298,69 @@ $$ D = \frac{k_BT}{6\pi\eta r} $$
 
 ```python
 from scipy.constants import Boltzmann as kB_sc # I've imported the unitless value for kB from SciPy
-
+from aide_design.play import*
 kB = kB_sc * u.joule / u.kelvin # I've given kB units for you in J/K; you can use the kB variable to give you Boltzmann's constant with units
 
-# Write your code here
+def StokesEinstein(T,r,v):
+  """This function takes in values of temperature, particle radius and viscosity of water to calculate the diffusion coefficient D."""
+  T = T * u.kelvin
+  r = r * u.m
+  v = v * (u.kg/ (u.m * u.s))
+  D = ((kB * T)/ (6* np.pi * v *r)).to_base_units()
+  return D
+
+print(StokesEinstein(293,2, 890))
 
 ```
 
 6. You have a pipe with a radius of 0.2 m with water flowing in it at 2 m<sup>3</sup>/s. You want to see how the Reynolds Number changes as viscosity changes due to a change in temperature from 0 to 200<sup>o</sup>C. Create a plot of Reynolds Number against Temperature in Kelvin to show a relationship. Make sure your plot has a title, labeled axes, and axes grid. You can use functions from `physchem` like `pc.re_pipe` and `pc.viscosity_kinematic`. *(Hint: Make an array of temperatures to input into the `pc.viscosity_kinematic` function)*. Make sure to save you plot to your images folder in your personal repository, and display it below using `plt.show()` and a relative file path to the image.
 
-<!--- Fill you answer here. --->
+```python
+from aide_design.play import*
+Diam = .2* 2 * u.m;
+FlowRate = 2 * (u.m **3/u.s)
+temp=[] #need to clear array before adding values
+for k in range(0,201):
+  temp.append(k)
+xArray = (np.array(temp)+273)*u.kelvin
+#print(np.size(xArray))
 
+yArray= []
+for j in range((len(array_temps))) :
+  yArray.append(pc.re_pipe(FlowRate,Diam, pc.viscosity_kinematic(array_temps[j])))
+#(np.size(yArray))
+
+plt.plot(xArray, yArray, '-', label ='Reynolds number')
+plt.xlabel('Temperature (Kelvin)')
+plt.ylabel('Reynolds Number')
+plt.title('Temperature vs Reynolds Number')
+plt.minorticks_on()
+plt.grid(which = 'major')
+plt.grid(which = 'minor')
+plt.legend(loc = 'lower right', ncol = 1)
+plt.tight_layout()
+#plt.savefig('ReynoldsNumber.png')
+plt.show()
+
+Using a relative file path:
+Using relative file path:
+ ![ReynoldNumber](/Images/ReynoldNumber.jpg)
+
+#re_pipe returns Reynold number for a pipe; flow rate, diameter, nu(kinematic viscosity)
+#viscosity_kinematic returns kinematic viscosity of water at given temp
+```
+
+```
 # Teletype Basics
 In this section you and your team can practice using Teletype together.
 
 1. Create a portal for your team members to join. Have them write you words of  encouragement in the space below, and be sure they sign their name next to their encouragements.
 
-<!--- Fill you answer here. --->
 
 
+Hi, Srilekha is the best. And she is wonderful, that is all. - Lois Lee
+
+Matt said you were the first to finish the advanced Fusion tutorial . You gooo - Hannah Si
 
 
 2. Have you other team members create a portal for you to join. In their Markdown file, write them something encouraging, and sign your name.
@@ -290,7 +374,3 @@ Congratulations! You've completed this interactive tutorial. Now all you need to
 1. Stage your changes.
 2. In your commit message write that you've completed the tutorial.
 3. Commit your changes and push them.
-
-Hi, Srilekha is the best. And she is wonderful, that is all.
-
-Matt said you were the first to finish the advanced Fusion tutorial . You gooo - Hannah Si
